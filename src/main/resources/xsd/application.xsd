@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:work="http://www.fort.org/shemas/work"
+           xmlns:user="http://www.fort.org/shemas/user"
+           xmlns:bxs="http://www.fort.org/shemas/base"
+           xmlns:app="http://www.fort.org/shemas/application"
+           targetNamespace="http://www.fort.org/shemas/application" elementFormDefault="qualified">
+    <xs:import namespace="http://www.fort.org/shemas/base" schemaLocation="base.xsd"/>
+    <xs:import namespace="http://www.fort.org/shemas/user" schemaLocation="user.xsd"/>
+    <xs:import namespace="http://www.fort.org/shemas/work" schemaLocation="work.xsd"/>
+
+
+    <xs:element name="getUserRequest">
+        <xs:complexType>
+            <xs:sequence>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getUserResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="userList" type="app:UserList"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getWorkRequest">
+        <xs:complexType>
+            <xs:sequence>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getWorkResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="workList" type="app:WorkList"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="UserList">
+        <xs:complexContent>
+            <xs:extension base="bxs:EntityList">
+                <xs:sequence>
+                    <xs:element name="user" type="user:User" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="WorkList">
+        <xs:complexContent>
+            <xs:extension base="bxs:EntityList">
+                <xs:sequence>
+                    <xs:element name="work" type="work:Work" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+</xs:schema>

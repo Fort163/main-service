@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.fort.org/shemas/base"
+           targetNamespace="http://www.fort.org/shemas/base" elementFormDefault="qualified">
+
+    <xs:complexType name="EntityList">
+        <xs:attribute name="count" type="xs:int" use="optional"/>
+        <xs:attribute name="total" type="xs:int" use="optional"/>
+        <xs:attribute name="offset" type="xs:int" use="optional"/>
+        <xs:attribute name="hasMore" type="xs:boolean" use="optional"/>
+    </xs:complexType>
+
+
+</xs:schema>

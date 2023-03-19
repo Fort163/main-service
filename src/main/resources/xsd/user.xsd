@@ -10,7 +10,7 @@
             <xs:element name="secondName" type="xs:int"/>
             <xs:element name="middleName" type="xs:string"/>
             <xs:element name="age" type="xs:integer"/>
-            <xs:element name="employee" type="work:Work"/>
+            <xs:element name="work" type="work:Work"/>
         </xs:sequence>
     </xs:complexType>
 
